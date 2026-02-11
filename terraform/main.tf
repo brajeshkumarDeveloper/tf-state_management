@@ -21,7 +21,8 @@ variable "cidr" {
 
 resource "aws_key_pair" "example" {
   key_name   = "terraform-demo-abhi"  
-  public_key = file("~/.ssh/id_rsa.pub")  
+  public_key = var.public_key
+
 }
 
 resource "aws_vpc" "myvpc" {
